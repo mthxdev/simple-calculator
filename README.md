@@ -20,4 +20,80 @@ This project was created to:
 Clone the repository:
 
 ```bash
-git clone https://github.com/mthxdevc/simple-calculator.git
+git clone https://github.com/mthxdev/simple-calculator.git
+```
+## To-Do List complète
+
+### Base fonctionnelle
+- [x] Créer le fichier principal `main.py`
+- [ ] Initialiser l’interface avec `Tkinter`
+- [ ] Créer une fenêtre principale avec titre et dimensions
+- [ ] Afficher un champ pour les entrées de calcul
+- [ ] Créer un bouton pour valider le calcul
+- [ ] Ajouter un champ pour afficher le résultat
+- [x] Coder l’addition (a + b)
+- [x] Coder la soustraction (a - b)
+- [x] Coder la multiplication (a * b)
+- [x] Coder la division (a / b)
+- [x] Gérer les erreurs simples (division par zéro, input invalide)
+
+### Interface graphique
+- [ ] Ajouter un style propre (padding, couleurs, police, centrage…)
+- [ ] Créer une grille de boutons (0–9, +, −, ×, ÷, =, C)
+- [ ] Ajouter un champ d’historique ou console
+- [ ] Ajout d’un thème clair/sombre
+- [ ] Affichage responsive si redimensionnement
+
+### Fonctionnalités avancées
+- [ ] Gérer les nombres à virgule (ex. 3.14)
+- [ ] Gérer les opérations en chaîne (ex. 2 + 3 * 4)
+- [ ] Ajouter une touche `←` pour effacer un caractère
+- [ ] Ajouter le bouton `C` pour clear total
+- [ ] Ajouter des parenthèses (priorités de calcul)
+- [ ] Ajouter les puissances (`^`, ou `**`)
+- [ ] Ajouter les racines carrées
+- [ ] Gérer les pourcentages (%)
+- [ ] Implémenter un mode scientifique (log, sin, cos, tan…)
+- [ ] Ajouter un mode clavier (raccourcis)
+- [ ] Détection automatique de touches clavier (sans clic souris)
+
+### Qualité du code
+- [x] Organiser le code en fonctions claires
+- [x] Créer une classe `Calculatrice`
+- [ ] Ajouter des commentaires/docstrings
+- [x] Utiliser `try/except` pour toutes les erreurs critiques
+- [ ] Créer un fichier `requirements.txt` (Tkinter…)
+
+### Tests & vérifications
+- [ ] Écrire des tests unitaires avec `unittest` ou `pytest`
+- [ ] Vérifier les cas limites (0/0, nombre très grands, etc.)
+- [ ] Valider les opérations complexes avec parenthèses
+- [ ] Faire une revue de code finale
+
+### Structure du projet
+- [ ] Créer un dossier `/assets` si besoin d’icônes ou sons
+- [ ] Séparer les fichiers si le code devient trop long (`gui.py`, `logic.py`, etc.)
+- [x] Ajouter un `.gitignore` pour ignorer fichiers inutiles (pyc, env…)
+
+### Distribution
+- [ ] Créer un `.exe` avec `PyInstaller` (pour Windows)
+- [ ] Tester l’exécutable sur un autre PC
+- [ ] Ajouter une icône à l’exécutable
+- [ ] Ajouter une animation ou écran de chargement
+
+### Documentation
+- [x] Créer un `README.md`
+- [ ] Ajouter une section “Comment exécuter le projet”
+- [ ] Ajouter des captures d’écran de l’application
+- [ ] Ajouter un changelog (journal de version)
+- [x] Ajouter une section “To-Do List”
+- [ ] Lister les bugs connus ou limitations
+- [ ] Préparer une version anglaise du README
+
+### Bonus / Web / Extensions
+- [ ] Adapter en version web (ex. : avec Flask)
+- [ ] Créer une interface en ligne avec `HTML/CSS/JS`
+- [ ] Connecter à une base de données pour stocker l’historique
+- [ ] Créer une version mobile (Kivy, Flutter…)
+
+
