@@ -1,56 +1,93 @@
 import tkinter as tk
-from tkinter import messagebox
-class Calculatrice:
-    def addition(self, a, b):
-        return a + b
 
-    def soustraction(self, a, b):
-        return a - b
+def on_click(value):
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current + str(value))
 
-    def multiplication(self, a, b):
-        return a * b
-    
-    def division(self, a, b):
-        if b == 0:
-            raise ValueError("Division par zéro n'est pas permise.")
-        return a / b
-def effectuer_operation(operation):
+def clear_entry():
+    entry.delete(0, tk.END)
+
+def delete_last():
+    current = entry.get()
+    current_new = current[:-1]
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current_new)
+
+def calculate():
     try:
-        a = float(entry_a.get())
-        b = float(entry_b.get())
-        resultat = getattr(calc, operation)(a, b)
-        label_resultat.config(text=f"Résultat: {resultat}")
-    except ValueError as ve:
-        messagebox.showerror("Erreur", str(ve))
-    except Exception as e:
-        messagebox.showerror("Erreur", f"Une erreur est survenue: {e}")
-calc = Calculatrice()
+        result = eval(entry.get())
+        entry.delete(0,tk.END)
+        entry.insert(0, str(result))
+    except Exception:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+root = tk.Tk()
+root.title("Simple Calculator")
+root.geometry("320x415")
 
-fenetre = tk.Tk()
-fenetre.title("Calculatrice Simple")
-fenetre.geometry("225x125")
+entry = tk.Entry(root, width=16, font=("Arial", 24), bd=5, relief=tk.SUNKEN, justify='right')
+entry.grid(row=0, column=0, columnspan=4)
 
-tk.Label(fenetre, text="Nombre A:").grid(row=0, column=0)
-entry_a = tk.Entry(fenetre)
-entry_a.grid(row=0, column=1)
+buttons = [
+    ('7',1,0), ('8',1,1), ('9',1,2), ('+',1,3),
+    ('4',2,0), ('5',2,1), ('6',2,2), ('-',2,3),
+    ('1',3,0), ('2',3,1), ('3',3,2), ('*',3,3),
+    ('0',4,0), ('.',4,1), ('=',4,2), ('/',4,3),
+    ('C',5,0,2), ('<-',5,2,2)
+]
 
-tk.Label(fenetre, text="Nombre B:").grid(row=1, column=0)
-entry_b = tk.Entry(fenetre)
-entry_b.grid(row=1, column=1)
+import tkinter as tk
 
-btn_add = tk.Button(fenetre, text="Addition", command=lambda: effectuer_operation('addition'))
-btn_add.grid(row=2, column=0)
+def on_click(value):
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current + str(value))
 
-btn_sub = tk.Button(fenetre, text="Soustraction", command=lambda: effectuer_operation('soustraction'))
-btn_sub.grid(row=2, column=1)
+def clear_entry():
+    entry.delete(0, tk.END)
 
-btn_mul = tk.Button(fenetre, text="Multiplication", command=lambda: effectuer_operation('multiplication'))
-btn_mul.grid(row=3, column=0)
+def delete_last():
+    current = entry.get()
+    current_new = current[:-1]
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, current_new)
 
-btn_div = tk.Button(fenetre, text="Division", command=lambda: effectuer_operation('division'))
-btn_div.grid(row=3, column=1)
+def calculate():
+    try:
+        result = eval(entry.get())
+        entry.delete(0,tk.END)
+        entry.insert(0, str(result))
+    except Exception:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+root = tk.Tk()
+root.title("Simple Calculator")
+root.geometry("320x415")
 
-label_resultat = tk.Label(fenetre, text="Résultat:")
-label_resultat.grid(row=4, columnspan=2)
+entry = tk.Entry(root, width=16, font=("Arial", 24), bd=5, relief=tk.SUNKEN, justify='right')
+entry.grid(row=0, column=0, columnspan=4)
 
-fenetre.mainloop()
+buttons = [
+    ('7',1,0), ('8',1,1), ('9',1,2), ('+',1,3),
+    ('4',2,0), ('5',2,1), ('6',2,2), ('-',2,3),
+    ('1',3,0), ('2',3,1), ('3',3,2), ('*',3,3),
+    ('0',4,0), ('.',4,1), ('=',4,2), ('/',4,3),
+    ('C',5,0,2), ('<-',5,2,2)
+]
+
+for (text, row, col, colspan) in [(b[0], b[1], b[2], 1) if len(b) == 3 else b for b in buttons]:
+    if text == '=':
+        action = calculate
+    elif text == 'C':
+        action = clear_entry
+    elif text == '<-':
+        action = delete_last
+    else:
+        action = lambda x=text: on_click(x)
+    
+    tk.Button(root, text=text, width=5, height=2, font=("Arial", 18), command=action)\
+        .grid(row=row, column=col, columnspan=colspan, sticky='nsew')
+
+
+root.mainloop()
