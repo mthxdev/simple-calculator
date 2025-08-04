@@ -1,3 +1,5 @@
+import tkinter as tk
+from tkinter import messagebox
 class Calculatrice:
     def addition(self, a, b):
         return a + b
@@ -12,16 +14,43 @@ class Calculatrice:
         if b == 0:
             raise ValueError("Division par zéro n'est pas permise.")
         return a / b
-def main():
-    calc = Calculatrice()
-    
-    print("Addition de 5 et 3:", calc.addition(5, 3))
-    print("Soustraction de 5 et 3:", calc.soustraction(5, 3))
-    print("Multiplication de 5 et 3:", calc.multiplication(5, 3))
+def effectuer_operation(operation):
     try:
-        print("Division de 5 par 0:", calc.division(5, 0))
-    except ValueError as e:
-        print(e)
+        a = float(entry_a.get())
+        b = float(entry_b.get())
+        resultat = getattr(calc, operation)(a, b)
+        label_resultat.config(text=f"Résultat: {resultat}")
+    except ValueError as ve:
+        messagebox.showerror("Erreur", str(ve))
+    except Exception as e:
+        messagebox.showerror("Erreur", f"Une erreur est survenue: {e}")
+calc = Calculatrice()
 
-if __name__ == "__main__":
-    main()
+fenetre = tk.Tk()
+fenetre.title("Calculatrice Simple")
+fenetre.geometry("225x125")
+
+tk.Label(fenetre, text="Nombre A:").grid(row=0, column=0)
+entry_a = tk.Entry(fenetre)
+entry_a.grid(row=0, column=1)
+
+tk.Label(fenetre, text="Nombre B:").grid(row=1, column=0)
+entry_b = tk.Entry(fenetre)
+entry_b.grid(row=1, column=1)
+
+btn_add = tk.Button(fenetre, text="Addition", command=lambda: effectuer_operation('addition'))
+btn_add.grid(row=2, column=0)
+
+btn_sub = tk.Button(fenetre, text="Soustraction", command=lambda: effectuer_operation('soustraction'))
+btn_sub.grid(row=2, column=1)
+
+btn_mul = tk.Button(fenetre, text="Multiplication", command=lambda: effectuer_operation('multiplication'))
+btn_mul.grid(row=3, column=0)
+
+btn_div = tk.Button(fenetre, text="Division", command=lambda: effectuer_operation('division'))
+btn_div.grid(row=3, column=1)
+
+label_resultat = tk.Label(fenetre, text="Résultat:")
+label_resultat.grid(row=4, columnspan=2)
+
+fenetre.mainloop()
