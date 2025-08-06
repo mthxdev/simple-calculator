@@ -38,22 +38,22 @@ git clone https://github.com/mthxdev/simple-calculator.git
 - [x] Gérer les erreurs simples (division par zéro, input invalide)
 
 ### Interface graphique
-- [ ] Ajouter un style propre (padding, couleurs, police, centrage…)
+- [x] Ajouter un style propre (padding, couleurs, police, centrage…)
 - [x] Créer une grille de boutons (0–9, +, −, ×, ÷, =, C)
 - [ ] Ajouter un champ d’historique ou console
 - [ ] Ajout d’un thème clair/sombre
-- [ ] Affichage responsive si redimensionnement
+- [x] Affichage responsive si redimensionnement
 
 ### Fonctionnalités avancées
 - [x] Gérer les nombres à virgule (ex. 3.14)
 - [x] Gérer les opérations en chaîne (ex. 2 + 3 * 4)
 - [x] Ajouter une touche `←` pour effacer un caractère
 - [x] Ajouter le bouton `C` pour clear total
-- [ ] Ajouter des parenthèses (priorités de calcul)
+- [x] Ajouter des parenthèses (priorités de calcul)
 - [x] Ajouter les puissances (`^`, ou `**`)
-- [ ] Ajouter les racines carrées
-- [ ] Gérer les pourcentages (%)
-- [ ] Implémenter un mode scientifique (log, sin, cos, tan…)
+- [x] Ajouter les racines carrées
+- [x] Gérer les pourcentages (%)
+- [x] Implémenter un mode scientifique (log, sin, cos, tan…)
 - [ ] Ajouter un mode clavier (raccourcis)
 - [ ] Détection automatique de touches clavier (sans clic souris)
 
