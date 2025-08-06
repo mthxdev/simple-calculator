@@ -26,11 +26,11 @@ git clone https://github.com/mthxdev/simple-calculator.git
 
 ### Base fonctionnelle
 - [x] Créer le fichier principal `main.py`
-- [ ] Initialiser l’interface avec `Tkinter`
-- [ ] Créer une fenêtre principale avec titre et dimensions
-- [ ] Afficher un champ pour les entrées de calcul
-- [ ] Créer un bouton pour valider le calcul
-- [ ] Ajouter un champ pour afficher le résultat
+- [x] Initialiser l’interface avec `Tkinter`
+- [x] Créer une fenêtre principale avec titre et dimensions
+- [x] Afficher un champ pour les entrées de calcul
+- [x] Créer un bouton pour valider le calcul
+- [x] Ajouter un champ pour afficher le résultat
 - [x] Coder l’addition (a + b)
 - [x] Coder la soustraction (a - b)
 - [x] Coder la multiplication (a * b)
@@ -39,18 +39,18 @@ git clone https://github.com/mthxdev/simple-calculator.git
 
 ### Interface graphique
 - [ ] Ajouter un style propre (padding, couleurs, police, centrage…)
-- [ ] Créer une grille de boutons (0–9, +, −, ×, ÷, =, C)
+- [x] Créer une grille de boutons (0–9, +, −, ×, ÷, =, C)
 - [ ] Ajouter un champ d’historique ou console
 - [ ] Ajout d’un thème clair/sombre
 - [ ] Affichage responsive si redimensionnement
 
 ### Fonctionnalités avancées
-- [ ] Gérer les nombres à virgule (ex. 3.14)
-- [ ] Gérer les opérations en chaîne (ex. 2 + 3 * 4)
-- [ ] Ajouter une touche `←` pour effacer un caractère
-- [ ] Ajouter le bouton `C` pour clear total
+- [x] Gérer les nombres à virgule (ex. 3.14)
+- [x] Gérer les opérations en chaîne (ex. 2 + 3 * 4)
+- [x] Ajouter une touche `←` pour effacer un caractère
+- [x] Ajouter le bouton `C` pour clear total
 - [ ] Ajouter des parenthèses (priorités de calcul)
-- [ ] Ajouter les puissances (`^`, ou `**`)
+- [x] Ajouter les puissances (`^`, ou `**`)
 - [ ] Ajouter les racines carrées
 - [ ] Gérer les pourcentages (%)
 - [ ] Implémenter un mode scientifique (log, sin, cos, tan…)
