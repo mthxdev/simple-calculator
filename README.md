@@ -60,7 +60,7 @@ git clone https://github.com/mthxdev/simple-calculator.git
 ### Qualité du code
 - [x] Organiser le code en fonctions claires
 - [x] Créer une classe `Calculatrice`
-- [ ] Ajouter des commentaires/docstrings
+- [x] Ajouter des commentaires/docstrings
 - [x] Utiliser `try/except` pour toutes les erreurs critiques
 - [ ] Créer un fichier `requirements.txt` (Tkinter…)
 
